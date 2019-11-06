@@ -57,11 +57,12 @@ class ParameterMapperSpec extends Specification {
 
     where:
       modelRef                                      | type      | format  | itemType | itemFormat
-      new ModelRef("string")                        | "string"  | null    | null      | null
-      new ModelRef("array", new ModelRef("string")) | "array"   | null    | "string"  | null
-      new ModelRef("array", new ModelRef("int"))    | "array"   | null    | "integer" | "int32"
-      new ModelRef("int")                           | "integer" | "int32" | null      | null
-      new ModelRef("long")                          | "integer" | "int64" | null      | null
+      new ModelRef("string")                        | "string"  | null    | null           | null
+      new ModelRef("array", new ModelRef("string")) | "array"   | null    | "string"       | null
+      new ModelRef("array", new ModelRef("int"))    | "array"   | null    | "integer"      | "int32"
+      new ModelRef("int")                           | "integer" | "int32" | null           | null
+      new ModelRef("long")                          | "integer" | "int64" | null           | null
+      new ModelRef("boolean")                       | "boolean" | null    | null           | null
   }
 
   def "form parameters fall back to body parameters for non-primitive top level types" () {
